@@ -1,0 +1,1557 @@
+/* =====================================
+   Base Reset
+===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   Footer Container
+===================================== */
+.footer {
+  background-color: #C25938;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  font-family: "Merriweather", serif;
+  position: relative;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 2% auto;
+}
+
+/* =====================================
+   Footer Links
+===================================== */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin: 5px 0;
+  padding: 0 10px;
+}
+
+.footer-links a {
+  font-weight: 100 !important;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  padding: 0 8px;
+}
+
+.footer-links a:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: -2px;
+  color: white;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #eaeaea;
+}
+
+/* =====================================
+   Social Icons Section
+===================================== */
+.social-icons {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.social-icons span {
+  font-size: 17px;
+}
+
+.social-icons-container {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Hover effect for social icon background and icon color */
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.social-icons a:hover::before {
+  transform: scale(1);
+}
+
+.social-icons a:hover svg {
+  fill: #000;
+  transform: scale(1.1);
+}
+
+.social-icons a:active {
+  transform: scale(0.95);
+}
+
+/* =====================================
+   Footer Info Text
+===================================== */
+.footer-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  color: white;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+/* =====================================
+   Responsive Styling
+===================================== */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 12px 8px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a {
+    padding: 4px 0;
+  }
+
+  .footer-links a:not(:last-child)::after {
+    content: ''; /* Remove pipe on small screens */
+  }
+
+  .social-icons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social-icons span {
+    margin-bottom: 8px;
+  }
+}
+
+/* ===============================
+   Root Variables for Theme Colors
+================================== */
+:root {
+  --primary-color: #c75d3b;        /* Orange-brown */
+  --secondary-color: #f2bfb3;      /* Light orange-brown */
+  --border-color: #e0e0e0;
+  --hover-color: #f9f9f9;
+  --text-color: #333333;
+  --button-hover: #a1432a;
+  --radio-checked: #c75d3b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f5f5;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
+/* ===============================
+   Container Styling
+================================== */
+.accessibilityoptions-container {
+  max-width: 1150px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.8;
+  color: var(--text-color);
+  padding: 2rem;
+  position: relative;
+}
+
+/* ===============================
+   Heading Styling
+================================== */
+.accessibilityoptions-container h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* ===============================
+   Action Buttons (Top Right)
+================================== */
+.accessibilityoptions-actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 1rem;
+}
+
+.accessibilityoptions-actions button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accessibilityoptions-actions button:hover {
+  background: var(--button-hover); /* fixed variable reference */
+  transform: scale(1.05);
+}
+
+/* ===============================
+   Paragraph Styling
+================================== */
+.accessibilityoptions-container p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ===============================
+   Fieldset Styling
+================================== */
+fieldset {
+  border: 2px solid var(--border-color);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+fieldset:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   Legend Styling
+================================== */
+legend {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 0 0.5rem;
+}
+
+/* ===============================
+   Label Styling
+================================== */
+label {
+  display: block;
+  font-size: 1rem;
+  margin: 0.75rem 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+label:hover {
+  color: var(--button-hover);
+}
+
+/* ===============================
+   Radio Button Styling
+================================== */
+input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: var(--radio-checked);
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+input[type="radio"]:hover {
+  transform: scale(1.4);
+}
+
+/* ===============================
+   Apply Button
+================================== */
+.apply-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-family: "Merriweather", serif;
+}
+
+.apply-btn:hover {
+  background: var(--button-hover);
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   Responsive Design
+================================== */
+@media (max-width: 768px) {
+  .accessibilityoptions-container {
+    padding: 1.5rem;
+  }
+
+  fieldset {
+    padding: 1rem;
+  }
+
+  .apply-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =====================================
+   Accessibility Statement Container
+===================================== */
+.accessibilitystatement-container {
+  max-width: 1150px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.8;
+  color: var(--text-color);
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.accessibilitystatement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.accessibilitystatement-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* =====================================
+   Action Buttons
+===================================== */
+.accessibilitystatement-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.accessibilitystatement-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.accessibilitystatement-button:hover {
+  background: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Table Styling
+===================================== */
+.accessibilitystatement-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Table Head */
+.accessibilitystatement-table thead tr {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+}
+
+/* Table Cells */
+.accessibilitystatement-table th,
+.accessibilitystatement-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Alternate Row Colors */
+.accessibilitystatement-table tbody tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+/* Row Hover */
+.accessibilitystatement-table tbody tr:hover {
+  background-color: var(--hover-color);
+}
+
+/* =====================================
+   List Styling
+===================================== */
+.accessibilitystatement-content ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+
+.accessibilitystatement-content li {
+  margin-bottom: 1rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.accessibilitystatement-content li:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .accessibilitystatement-container {
+    padding: 1rem;
+  }
+
+  .accessibilitystatement-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .accessibilitystatement-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .accessibilitystatement-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .accessibilitystatement-table th,
+  .accessibilitystatement-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* =====================================
+   Container Styling
+===================================== */
+.copyright-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.copyright-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.copyright-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.copyright-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* =====================================
+   Button Actions
+===================================== */
+.copyright-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.copyright-actions button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.copyright-actions button:hover {
+  background: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Content Section
+===================================== */
+.content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.content a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.content a:hover {
+  color: var(--btn-hover-bg);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .copyright-container {
+    padding: 1.5rem;
+  }
+
+  .copyright-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright-actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .copyright-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =====================================
+DISCLAIMER
+===================================== *
+/* =====================================
+   Container Styling
+===================================== */
+.disclaimer-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.disclaimer-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.disclaimer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.disclaimer-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* =====================================
+   Actions Section (Buttons)
+===================================== */
+.disclaimer-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.disclaimer-actions button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.disclaimer-actions button:hover {
+  background: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Paragraph Content Styling
+===================================== */
+.disclaimer p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.disclaimer p:hover {
+  color: var(--primary-color);
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .disclaimer-container {
+    padding: 1.5rem;
+  }
+
+  .disclaimer-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .disclaimer-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .disclaimer-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .disclaimer-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .disclaimer p {
+    font-size: 1rem;
+  }
+}
+
+/* =====================================
+   Help Container Styling
+===================================== */
+.help-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.help-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.help-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* =====================================
+   Action Buttons
+===================================== */
+.help-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.help-actions button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.help-actions button:hover {
+  background: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Help Content
+===================================== */
+.help-content {
+  margin-top: 1.5rem;
+  line-height: 1.8;
+}
+
+.help-content h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* =====================================
+   List Styling
+===================================== */
+.help-content ol,
+.help-content ul {
+  margin-left: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  border-top: 4px solid var(--primary-color);
+  background: #fff;
+  border-radius: 8px;
+  list-style-position: inside;
+}
+
+.help-content ul {
+  list-style-type: disc;
+}
+
+.help-content ol {
+  list-style-type: decimal;
+}
+
+.help-content ol:hover,
+.help-content ul:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.help-content li {
+  margin-bottom: 1rem;
+}
+
+.help-content li strong {
+  color: var(--primary-color);
+}
+
+/* =====================================
+   Link Styling
+===================================== */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--btn-hover-bg);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .help-container {
+    padding: 1.5rem;
+  }
+
+  .help-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .help-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .help-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .help-actions button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .help-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .help-content ol,
+  .help-content ul {
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+/* =====================================
+   Hyperlinking Policy Container
+===================================== */
+.hyperlinking-policy-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.hyperlinking-policy-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.hyperlinking-policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.hyperlinking-policy-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* =====================================
+   Action Buttons
+===================================== */
+.hyperlinking-policy-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hyperlinking-policy-actions button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hyperlinking-policy-actions button:hover {
+  background: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Section Block Styling
+===================================== */
+.hyperlinking-policy-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-left: 6px solid var(--primary-color);
+  border-top: 4px solid var(--secondary-color);
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.hyperlinking-policy-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* =====================================
+   Typography
+===================================== */
+.hyperlinking-policy-subtitle {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.hyperlinking-policy-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* =====================================
+   Link Styling
+===================================== */
+a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--btn-hover-bg);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .hyperlinking-policy-container {
+    padding: 1.5rem;
+  }
+
+  .hyperlinking-policy-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hyperlinking-policy-title {
+    font-size: 1.5rem;
+  }
+
+  .hyperlinking-policy-section {
+    padding: 1rem;
+  }
+
+  .hyperlinking-policy-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hyperlinking-policy-actions button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+/* =====================================
+   General Container
+===================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* =====================================
+   Notice Table Styling
+===================================== */
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.notice-table th,
+.notice-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.notice-table th {
+  background-color: #c75d3b;
+  color: #fff;
+  font-weight: bold;
+}
+
+.notice-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* =====================================
+   Pagination Section
+===================================== */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+/* Scrollable Flex Pagination */
+.pagination {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #a45c40 #f1f1f1;
+}
+
+.pagination::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pagination::-webkit-scrollbar-thumb {
+  background: #a45c40;
+  border-radius: 10px;
+}
+
+.pagination::-webkit-scrollbar-thumb:hover {
+  background: #7c3a26;
+}
+
+/* Pagination Buttons */
+.pagination button {
+  min-width: 40px;
+  height: 40px;
+  background-color: #a45c40;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #7c3a26;
+}
+
+.pagination button.active {
+  background-color: #4CAF50;
+  transform: scale(1.1);
+}
+
+/* =====================================
+   Privacy Policy Container
+===================================== */
+.privacypolicy-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.privacypolicy-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.privacypolicy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.privacypolicy-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* =====================================
+   Action Buttons
+===================================== */
+.privacypolicy-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.privacypolicy-actions button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.privacypolicy-actions button:hover {
+  background-color: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Typography
+===================================== */
+.privacypolicy h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.privacypolicy p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.privacypolicy a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.privacypolicy a:hover {
+  color: var(--btn-hover-bg);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Table Styling
+===================================== */
+.privacypolicy-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.privacypolicy-table thead tr {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: left;
+}
+
+.privacypolicy-table th,
+.privacypolicy-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.privacypolicy-table tbody tr:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+
+.privacypolicy-table tbody tr:hover {
+  background-color: var(--hover-color);
+  transition: background-color 0.3s ease;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .privacypolicy-container {
+    padding: 1.5rem;
+  }
+
+  .privacypolicy-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .privacypolicy-actions button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .privacypolicy-table {
+    display: block;
+    overflow-x: auto;
+    border-radius: 0; /* Flatten corners on mobile for smoother scroll */
+  }
+
+  .privacypolicy-table th,
+  .privacypolicy-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+   Related Links Container
+===================================== */
+.related-links-container {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.related-links-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Header Section
+===================================== */
+.related-links-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.related-links-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* =====================================
+   Action Buttons
+===================================== */
+.related-links-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.related-links-actions button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.related-links-actions button:hover {
+  background-color: var(--btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* =====================================
+   Table Styling
+===================================== */
+.related-links-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.related-links-table thead tr {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: left;
+}
+
+.related-links-table th,
+.related-links-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.related-links-table tbody tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.related-links-table tbody tr:hover {
+  background-color: var(--hover-color);
+  transition: background-color 0.3s ease;
+}
+
+/* =====================================
+   Link Styling
+===================================== */
+.related-links-table a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.related-links-table a:hover {
+  color: var(--btn-hover-bg);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .related-links-container {
+    padding: 1.5rem;
+  }
+
+  .related-links-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .related-links-actions button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .related-links-table {
+    display: block;
+    overflow-x: auto;
+    border-radius: 0;
+  }
+
+  .related-links-table th,
+  .related-links-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+   State Commission Container
+===================================== */
+.StateCommission {
+  font-family: 'Merriweather', serif;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.StateCommission:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   Heading Styling
+===================================== */
+.StateCommission h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+/* =====================================
+   Table Styling
+===================================== */
+.StateCommission table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.StateCommission thead tr {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+}
+
+.StateCommission th,
+.StateCommission td {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.StateCommission tbody tr:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+
+.StateCommission tbody tr:hover {
+  background-color: var(--hover-bg);
+}
+
+/* =====================================
+   Link Styling
+===================================== */
+.StateCommission a {
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.StateCommission a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+@media (max-width: 768px) {
+  .StateCommission {
+    padding: 1.5rem;
+  }
+
+  .StateCommission h1 {
+    font-size: 1.8rem;
+  }
+
+  .StateCommission table {
+    display: block;
+    overflow-x: auto;
+    border-radius: 0;
+  }
+
+  .StateCommission th,
+  .StateCommission td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

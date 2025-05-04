@@ -1,0 +1,2570 @@
+/* ==========================
+   Theme Variables
+   ========================== */
+   :root {
+    --primary-color: #c75d3b;        /* Main brand color - orange-brown */
+    --secondary-color: #f2bfb3;      /* Light accent color */
+    --border-color: #e0e0e0;         /* Light gray border */
+    --hover-color: #f9f9f9;          /* Table row hover background */
+    --text-color: #333333;           /* Primary text color */
+    --background-color: #ffffff;     /* Page background */
+  }/* Base Body Styling */
+  body {
+  background-color: var(--background-color);
+  color: var(--text-color); 
+  }
+
+  .print-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    color: black;
+    font-family: "merriweather";      /* Ensure this font is also available */
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .print-btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+
+/* ==========================================================================
+   ABOUT US PAGE STYLESHEET
+   Description: Styles for About Us layout, typography, and responsiveness.
+   ========================================================================== */
+
+/* ==========================
+   Global Reset
+   ========================== */
+/* Removes default margin/padding and applies consistent box sizing */
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   Main Container
+   ========================== */
+/* General layout wrapper for About Us content */
+.container {
+  max-width: 1200px;                  /* Max width to constrain content */
+  margin: 2rem auto 60px;            /* Top and bottom spacing, centered */
+  padding: 0 1.5rem;                 /* Side padding for responsiveness */
+  font-family: "Merriweather", serif; /* Primary font style */
+}
+
+/* ==========================
+   Main Section Heading
+   ========================== */
+/* Large centered heading with stylized underline */
+.about-underline {
+  font-weight: 100;
+  text-decoration: underline;
+  text-underline-offset: 20px;        /* Gap between text and underline */
+  text-decoration-thickness: 3px;     /* Thickness of underline */
+  font-size: 70px;
+  font-family: 'Scheherazade New', serif;
+  text-align: center;
+  color: #C25938;                     /* Rich red-orange tone */
+  margin: 0;
+}
+
+/* ==========================
+   Paragraph Styling
+   ========================== */
+/* Typography and spacing for About Us text content */
+.about-content p {
+  color: #333;                        /* Neutral dark text */
+  line-height: 1.8;                   /* Comfortable spacing for reading */
+  font-size: 1rem;                    /* Standard font size */
+  margin: 30px 0 20px;                /* Top and bottom spacing */
+  font-family: 'Scheherazade New', serif;
+}
+
+/* ==========================
+   Responsive Adjustments
+   ========================== */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+    padding: 0 1rem;                  /* Reduced side padding on small screens */
+  }
+
+  /* Adjust heading size and spacing for smaller devices */
+  .about-underline {
+    font-size: 2.2rem;
+    text-underline-offset: 10px;
+  }
+}
+
+/* ==========================================================================
+   RULES OF PROCEDURES SECTION STYLESHEET
+   Description: Styles for rendering the Rules of Procedures table layout
+   including header, table structure, and hover effects.
+   ========================================================================== */
+
+
+  
+  /* ==========================
+     Container Wrapper
+     ========================== */
+  /* Used to center and limit content width */
+  .rules-report {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+  }
+  
+  /* ==========================
+     Table Layout
+     ========================== */
+  .rules-table-content {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 8px solid var(--primary-color);  /* Branding line at bottom */
+    overflow-x: auto;  /* Ensures horizontal scroll if needed on small screens */
+  }
+  
+  /* ==========================
+     Header Bar of the Report
+     ========================== */
+  /* Displays report title and actions if needed */
+  .rules-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 10px;  /* Can be adjusted depending on context */
+  }
+  
+  /* ==========================
+     Table Column Headings
+     ========================== */
+  .rules-report th {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  /* ==========================
+     Table Body Data Cells
+     ========================== */
+  .rules-report td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* ==========================
+     Table Row Hover Effect
+     ========================== */
+  /* Adds subtle visual feedback when user hovers over a row */
+  .rules-report tr:hover {
+    background-color: var(--hover-color);
+  }
+     /* ==========================
+     Print Button
+     ========================== */
+  .rules-print-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    color: black;
+    font-family: "merriweather";      /* Ensure this font is also available */
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .rules-print-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  
+  /* ==========================================================================
+   ORGANIZATIONAL STRUCTURE SECTION STYLESHEET
+   Description: This stylesheet defines the layout and styles for the 
+   organizational structure UI, including the search, print, table rows,
+   and download links.
+   ========================================================================== */
+
+/* ==========================
+   Container Layout Wrapper
+   ========================== */
+.organizational-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+/* ==========================
+   Header Section
+   ========================== */
+.organizational-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: "Merriweather", serif;
+}
+
+/* Header Title */
+.organizational-header h1 {
+  font-size: 20px;
+}
+
+/* ==========================
+   Search and Print Area
+   ========================== */
+.search-print {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Search Box Styling */
+.organizational-search-box {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  min-width: 200px;
+  background-color: var(--background-color);
+}
+
+ 
+
+/* ==========================
+   Table Header Section
+   ========================== */
+.organizational-table-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Column Definitions */
+.organizational-name-column {
+  flex: 3;
+  text-align: left;
+}
+
+.organizational-download-column {
+  flex: 1;
+  text-align: center;
+}
+
+/* ==========================
+   Table Rows and Data
+   ========================== */
+
+/* Container for Rows */
+.organizational-rows-container {
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+}
+
+/* Single Row Layout */
+.organizational-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Row Hover Effect */
+.organizational-row:hover {
+  background-color: var(--hover-color);
+}
+
+/* ==========================
+   Download Link Styling
+   ========================== */
+.organizational-download-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.organizational-download-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   No Results Found Message
+   ========================== */
+.organizational-no-results {
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   MANDAL REPORT STYLESHEET
+   Description: Styles for Mandal listing, filters, printing, and table layout.
+   ========================================================================== */
+
+/* ==========================
+   Container Layout
+   ========================== */
+   .mandal-container {
+    max-width: 1200px;             /* Constrains width to keep content aligned */
+    margin: 1.5rem auto;           /* Vertical spacing and center alignment */
+  }
+  
+  /* ==========================
+     Filter Section
+     ========================== */
+  .mandal-filter-section {
+    margin-bottom: 1rem;           /* Spacing below filter section */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;                     /* Space between items */
+    flex-wrap: wrap;              /* Wrap filters on smaller screens */
+  }
+  
+  /* Filter Labels */
+  .mandal-filter-section label {
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  /* Dropdown inside filter section */
+  .mandal-filter-dropdown {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    min-width: 150px;
+  }
+  
+  /* ==========================
+     Report Header Section
+     ========================== */
+  .mandal-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;  /* Rounded top corners */
+  }
+  
+  /* Report Title */
+  .mandal-report-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: "monteserrat";       /* Make sure this font is imported */
+  }
+  
+  /* ==========================
+     Table Styling
+     ========================== */
+  .mandalTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 8px solid var(--primary-color);
+    overflow-x: auto;
+  }
+  
+  /* Table Header Cells */
+  .mandalTable th {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  /* Table Data Cells */
+  .mandalTable td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Hover effect for table rows */
+  .mandalTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Alternate row background for better readability */
+  .alt-row {
+    background-color: #eaeaea;
+  }
+  
+  
+/* ============================================================
+   CSS STYLESHEET FOR ANNUAL REPORT SECTION
+   ============================================================ */
+
+/* -------------------------
+   Annual Report Container
+-------------------------- */
+.annual-container {
+  max-width: 1200px;               /* Restrict maximum width */
+  margin: 2rem auto;               /* Center align with vertical margin */
+  padding: 0 1.25rem;              /* Horizontal padding */
+}
+
+/* ============================================================
+   FILTER SECTION
+   ============================================================ */
+
+/* Wrapper for filters above the report */
+.annual-filter-section {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;                 /* Allow filters to wrap on smaller screens */
+}
+
+/* Label inside filter section */
+.annual-filter-section label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Dropdown styling */
+.annual-filter-dropdown {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+/* ============================================================
+   REPORT HEADER
+   ============================================================ */
+
+/* Top bar displaying section title and button */
+.annual-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Header title */
+.annual-report-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "monteserrat";
+}
+
+
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+
+/* Main annual table */
+.annualTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+  overflow-x: auto;
+}
+
+/* Table headers */
+.annualTable th {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Table data cells */
+.annualTable td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Row hover effect */
+.annualTable tr:hover {
+  background-color: var(--hover-color);
+}
+
+/* Alternate row background */
+.alt-row {
+  background-color: #f5f5f5;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Stack header content vertically */
+  .annual-report-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* Stack filter controls vertically */
+  .annual-filter-section {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  /* Ensure dropdowns span full width */
+  .filter-dropdown {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+
+@media print {
+  /* Hide filter controls and buttons in print */
+  .annual-filter-section,
+  .annual-print-btn {
+    display: none;
+  }
+
+  /* Remove styling artifacts for clean print */
+  .annualTable {
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Ensure header colors are preserved in print */
+  .annual-report-header {
+    background-color: var(--primary-color);
+    color: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Set page margin */
+  @page {
+    margin: 2cm;
+  }
+}
+
+
+  .commission-report {
+    max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  }
+
+  .commission-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 8px solid var(--primary-color);
+    overflow-x: auto;
+  }
+  .commission-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size:10px;
+  }
+
+  .commission-report th {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  .commission-report td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .commission-report tr:hover {
+    background-color: var(--hover-color);
+  }
+
+
+
+  /* ============================================================
+   CSS STYLESHEET FOR COMMISSION REPORT SECTION
+   ============================================================ */
+
+/* -------------------------
+   Commission Report Container
+-------------------------- */
+.commission-report {
+  max-width: 1200px;               /* Restrict maximum width */
+  margin: 2rem auto;               /* Center align with vertical margin */
+  padding: 0 1.25rem;              /* Horizontal padding */
+}
+
+/* ============================================================
+   REPORT HEADER
+   ============================================================ */
+
+/* Header section with title and action button */
+.commission-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-size: 10px;
+}
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+
+/* Main commission table */
+.commission-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+  overflow-x: auto;
+}
+
+/* Table headers */
+.commission-report th {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Table data cells */
+.commission-report td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Row hover effect */
+.commission-report tr:hover {
+  background-color: var(--hover-color);
+}
+
+/* ============================================================
+   CSS STYLESHEET FOR JUDGMENT TABLE SECTION
+   ============================================================ */
+
+/* -------------------------
+   Container Styling
+-------------------------- */
+.JudgmentTable {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container-judgment {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* -------------------------
+   Section Title
+-------------------------- */
+.judgment-section-title {
+  background-color: #c75d3b;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ============================================================
+   SEARCH BAR
+   ============================================================ */
+.judgment-search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  background-color: #ffffff;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 120px;
+  font-size: 14px;
+  outline: none;
+}
+
+.judgment-search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+}
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+
+/* Table wrapper */
+.judgment-table {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Table Header */
+.judgment-table thead th {
+  background-color: #f8d3ca;
+  color: black;
+  font-weight: bold;
+  padding: 14px;
+  border-bottom: 2px solid white;
+  text-align: left;
+}
+
+/* Table Body Rows */
+.judgment-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+/* Alternate row color */
+.judgment-table tbody tr:nth-child(even) {
+  background-color: #efeeee;
+}
+
+/* Table Data Cells */
+.judgment-table td {
+  padding: 14px;
+}
+
+/* ============================================================
+   DOWNLOAD BUTTON
+   ============================================================ */
+.download-btn {
+  background-color: white;
+  color: #b14a30;
+  font-weight: bold;
+  border: 2px solid #b14a30;
+  padding: 6px 12px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+  background-color: #b14a30;
+  color: white;
+}
+
+/* ============================================================
+   CSS STYLESHEET FOR CENTRALISED LISTING TABLE
+   ============================================================ */
+
+/* -------------------------
+   Header Section
+-------------------------- */
+.centralist-header {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* -------------------------
+   Container Styles
+-------------------------- */
+.centralist-container {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  font-family: "merriweather";
+}
+
+.centralist-filter-container {
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+/* ============================================================
+   FILTER STYLING
+   ============================================================ */
+.centralist-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  
+  
+}
+
+.centralist-filter label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.centralist-filter select,
+.centralist-filter input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+  background-color: white;
+}
+
+/* ============================================================
+   TABLE HEADER + CONTAINER
+   ============================================================ */
+.centralist-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+}
+
+.centralist-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c25b3f;
+  color: white;
+  padding: 10px 15px;
+}
+
+.centralist-table-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.centralist-table-wrapper {
+  overflow-x: auto;
+}
+
+/* ============================================================
+   TABLE CONTENT STYLING
+   ============================================================ */
+#obcTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+#obcTable th {
+  background-color: #f2cec4;
+  padding: 15px 5px;
+  text-align: left;
+  font-weight: bold;
+  border: none;
+}
+
+#obcTable td {
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+#obcTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#obcTable tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* -------------------------
+   Table Column Width Adjustments
+-------------------------- */
+#obcTable th:first-child,
+#obcTable td:first-child {
+  width: 150px;
+  text-align: center;
+}
+
+#obcTable th:nth-child(2),
+#obcTable td:nth-child(2) {
+  width: 200px;
+}
+
+#obcTable th:last-child,
+#obcTable td:last-child {
+  width: 300px;
+  text-align: left;
+}
+
+/* ============================================================
+   BUTTONS & LINKS
+   ============================================================ */
+.centralist-print-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.centralist-print-btn:hover {
+  text-decoration: underline;
+}
+
+.centralist-pdf-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.centralist-pdf-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   PRINT STYLING
+   ============================================================ */
+@media print {
+  .centralist-filter,
+  .centralist-print-btn {
+    display: none;
+  }
+
+  .centralist-table-container {
+    box-shadow: none;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLING
+   ============================================================ */
+@media (max-width: 768px) {
+  .centralist-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .centralist-filter label {
+    margin-bottom: 5px;
+  }
+
+  .centralist-filter select,
+  .centralist-filter input {
+    width: 100%;
+  }
+}
+/* ============================================================
+   CSS STYLESHEET FOR MEMORANDUM TABLE
+   ============================================================ */
+
+/* -------------------------
+   Container Styling
+-------------------------- */
+.memorandum {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+/* -------------------------
+   Header Styling
+-------------------------- */
+.memorandum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.memorandum-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "monteserrat";
+}
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+.memorandum-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+  overflow-x: auto;
+}
+
+/* -------------------------
+   Table Head
+-------------------------- */
+.memorandum-table th {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* -------------------------
+   Table Body
+-------------------------- */
+.memorandum-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.memorandum-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+/* ============================================================
+   BUTTON STYLING
+   ============================================================ */
+.memorandum-download-btn {
+  background-color: white;
+  color: #b14a30;
+  font-weight: bold;
+  border: 2px solid #b14a30;
+  padding: 6px 12px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
+
+.memorandum-download-btn:hover {
+  background-color: #b14a30;
+  color: white;
+}
+
+/* ============================================================
+   CSS STYLESHEET FOR MINISTRY ORDERS SECTION
+   ============================================================ */
+
+/* -------------------------
+   Container Styling
+-------------------------- */
+.ministry-orders {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 1.25rem;
+}
+
+/* -------------------------
+   Header Styling
+-------------------------- */
+.ministry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.ministry-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "monteserrat";
+}
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+.ministry-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid var(--primary-color);
+  overflow-x: auto;
+}
+
+/* -------------------------
+   Table Head
+-------------------------- */
+.ministry-table th {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* -------------------------
+   Table Body
+-------------------------- */
+.ministry-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ministry-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+/* ============================================================
+   BUTTON STYLING
+   ============================================================ */
+.ministry-download-btn {
+  background-color: white;
+  color: #b14a30;
+  font-weight: bold;
+  border: 2px solid #b14a30;
+  padding: 6px 12px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
+
+.ministry-download-btn:hover {
+  background-color: #b14a30;
+  color: white;
+}
+
+/* ============================================================
+   CSS STYLESHEET FOR NOTICE SECTION
+   ============================================================ */
+
+/* -------------------------
+   Container Styling
+-------------------------- */
+.notice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "merriweather";
+}
+
+/* ============================================================
+   TABLE STYLING
+   ============================================================ */
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.notice-table th,
+.notice-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.notice-table th {
+  background-color: #c75d3b;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.notice-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ============================================================
+   PAGINATION STYLING
+   ============================================================ */
+
+/* Container */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto; /* Enables horizontal scroll */
+  margin-top: 10px;
+}
+
+/* Wrapper */
+.pagination {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #a45c40 #f1f1f1;
+}
+
+/* Scrollbar Styling (Webkit) */
+.pagination::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pagination::-webkit-scrollbar-thumb {
+  background: #a45c40;
+  border-radius: 10px;
+}
+
+.pagination::-webkit-scrollbar-thumb:hover {
+  background: #7c3a26;
+}
+
+/* Buttons */
+.pagination button {
+  min-width: 40px;
+  height: 40px;
+  background-color: #a45c40;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.pagination button:hover {
+  background-color: #7c3a26;
+}
+
+/* Active Page */
+.pagination button.active {
+  background-color: #4CAF50;
+  transform: scale(1.1);
+}
+
+/* ============================================================
+   MEETING SECTION STYLESHEET
+   ============================================================ */
+
+/* -------------------------
+   Sort Section
+-------------------------- */
+.sort-section {
+  padding: 10px 20px;
+  padding-left: 10%;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-by span {
+  font-size: 14px;
+}
+
+.date-select select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100px;
+}
+
+/* -------------------------
+   Meeting Container & Header
+-------------------------- */
+.meeting-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C75D3B;
+  padding: 15px;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.meeting-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.meeting-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meeting-search {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.print-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* -------------------------
+   Meeting Table
+-------------------------- */
+.meeting-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.meeting-table th {
+  background-color: #F8CAB3;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.meeting-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* -------------------------
+   Link Styles
+-------------------------- */
+.chairman-link,
+.pdf-link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.pdf-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* -------------------------
+   Responsive Design
+-------------------------- */
+@media (max-width: 768px) {
+  .meeting-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .meeting-container {
+    width: 95%;
+  }
+
+  .meeting-search {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   MEETING SECTION STYLESHEET
+   ============================================================ */
+
+/* -------------------------
+   Sort Section
+-------------------------- */
+.sort-section {
+  padding: 10px 20px;
+  padding-left: 10%;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-by span {
+  font-size: 14px;
+}
+
+.date-select select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100px;
+}
+
+/* -------------------------
+   Meeting Container & Header
+-------------------------- */
+.meeting-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C75D3B;
+  padding: 15px;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.meeting-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.meeting-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meeting-search {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.print-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* -------------------------
+   Meeting Table
+-------------------------- */
+.meeting-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.meeting-table th {
+  background-color: #F8CAB3;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.meeting-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* -------------------------
+   Link Styles
+-------------------------- */
+.chairman-link,
+.pdf-link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.pdf-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* -------------------------
+   Responsive Design
+-------------------------- */
+@media (max-width: 768px) {
+  .meeting-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .meeting-container {
+    width: 95%;
+  }
+
+  .meeting-search {
+    width: 100%;
+  }
+}
+
+/* ===========================
+ADVICES CONTAINER
+=========================== */
+.custom-table-container {
+  margin: 100px 150px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fff;
+}
+
+/* ===========================
+   Header Section
+=========================== */
+.custom-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C75D3B;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Optional: Title Only (if needed separately) */
+.custom-table-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: #C75D3B;
+  color: white;
+  text-align: left;
+  margin: 0;
+}
+
+/* ===========================
+   Back Button
+=========================== */
+.custom-back-button {
+  background-color: white;
+  color: #C75D3B;
+  border: 2px solid #C75D3B;
+  padding: 6px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-back-button:hover {
+  background-color: #C75D3B;
+  color: white;
+}
+
+/* ===========================
+   Table Styling
+=========================== */
+.custom-styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+/* Table Head */
+.custom-styled-table thead th {
+  background-color: #F2BFB3;
+  color: black;
+  padding: 15px;
+  text-align: left;
+}
+
+/* Alternating Rows */
+.custom-styled-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.custom-styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Cell Padding */
+.custom-styled-table th,
+.custom-styled-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* ===========================
+   View Button
+=========================== */
+.custom-view-button {
+  text-decoration: none;
+  background-color: white;
+  color: #C75D3B;
+  border: 2px solid #C75D3B;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-view-button:hover {
+  background-color: #C75D3B;
+  color: white;
+}
+
+/* ===========================
+   Bottom Border Bar
+=========================== */
+.custom-table-bottom-border {
+  height: 10px;
+  background-color: #C75D3B;
+  width: 100%;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 768px) {
+  .custom-table-container {
+    margin: 50px 20px;
+  }
+
+  .custom-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1.2rem;
+  }
+
+  .custom-back-button {
+    align-self: flex-end;
+  }
+
+  .custom-styled-table {
+    font-size: 0.95rem;
+    overflow-x: auto;
+  }
+
+  .custom-view-button {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+}
+
+
+/* =============================
+   RTI Table Container
+============================= */
+.RTI-table-container {
+  width: 70%;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Adds scroll for smaller screens */
+}
+
+/* =============================
+   RTI Title Section
+============================= */
+.RTI-table-title {
+  background-color: #C75D3B;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px 15px 0 0;
+}
+
+/* =============================
+   Table Base Styling
+============================= */
+.RTI-styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header Cells */
+.RTI-styled-table th {
+  background-color: #F2BFB3;
+  color: #000000;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Data Cells */
+.RTI-styled-table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Row Divider */
+.RTI-styled-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover Effect */
+.RTI-styled-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* =============================
+   Clickable Link Styling
+============================= */
+.clickable {
+  color: #C75D3B;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+  color: #a13d25;
+}
+
+/* =============================
+   Responsive Tweak
+============================= */
+@media (max-width: 768px) {
+  .RTI-table-container {
+    width: 95%;
+  }
+
+  .RTI-table-title {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .RTI-styled-table th,
+  .RTI-styled-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   Authority Container Styling
+=============================== */
+.authority-container {
+  width: 80%;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: "merriweather", serif;
+}
+
+/* ===============================
+   Header Section
+=============================== */
+.authority-header {
+  background-color: #C75D3B;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.authority-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.back-button,
+.print-button {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.back-button {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.print-button {
+  background-color: white;
+  color: #333;
+}
+
+.back-button:hover,
+.print-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* ===============================
+   Main Content Section
+=============================== */
+.authority-content {
+  padding: 25px 20px;
+}
+
+.authority-content h3 {
+  background-color: #C75D3B;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.authority-content p {
+  font-size: 18px;
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.authority-content strong {
+  font-size: 20px;
+  color: #000;
+}
+
+/* ===============================
+   Responsive Adjustments
+=============================== */
+@media (max-width: 768px) {
+  .authority-container {
+    width: 95%;
+  }
+
+  .authority-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+  }
+
+  .authority-content p {
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+  ACT & RULES
+=============================== */
+.act-rules-container {
+  max-width: 1200px;
+  margin: 2rem auto 60px;                   /* Vertical spacing and center alignment */
+  background-color: #fff;
+  border-radius: 0.5rem 0.5rem 0 0;         /* Rounded top corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  font-family: "Merriweather", serif;      /* Serif font for formal appearance */
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* ===============================
+   Header Styling
+=============================== */
+.act-rules-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+/* ===============================
+   Table Container Styling
+=============================== */
+.act-rules-table-container {
+  overflow-x: auto;                         /* Enables horizontal scroll on small screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matches card shadow */
+  border-bottom: 8px solid var(--primary-color); /* Thick bottom border */
+}
+
+/* ===============================
+   Table Header Row Styling
+=============================== */
+.act-rules-table-header {
+  font-weight: bold;
+}
+
+.act-rules-table-header,
+.row {
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--secondary-color); /* Light header color */
+}
+
+/* ===============================
+   Regular Table Row Styling
+=============================== */
+.row {
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Alternate Row Styling */
+.alt-row {
+  background-color: #f5f5f5; /* Light gray for alternating rows */
+}
+
+/* ===============================
+   Table Cell Styling
+=============================== */
+.name-column,
+.download-column {
+  text-align: left;
+  padding: 0rem 1.5rem;
+  font-size: 15px;
+}
+
+/* ===============================
+   Download Link Styling
+=============================== */
+.download-column a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.download-column a:hover {
+  color: #a1432a; /* Darker shade on hover */
+}
+
+/* ===============================
+   Responsive Design
+=============================== */
+@media (max-width: 768px) {
+  .table-header,
+  .row {
+    flex-direction: column;       /* Stack elements vertically */
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* ===============================
+   Container Styling
+=============================== */
+.photogallery-container {
+  width: 100%;
+  max-width: 1400px;          /* Ensures layout doesn't stretch too much on wide screens */
+  margin: 0 auto;             /* Center the container horizontally */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Gallery Title Styling */
+.photogallery-title {
+  font-size: 40px;
+  color: rgb(226, 116, 43);   /* Bright orange for visibility */
+  margin-bottom: 60px;
+  text-transform: uppercase;  /* Makes title all caps */
+}
+
+/* ===============================
+   Grid Layout for Images
+=============================== */
+.photogallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Three equal columns */
+  gap: 40px;                              /* Space between images */
+  padding: 10px;
+}
+
+/* ===============================
+   Individual Card Styling
+=============================== */
+.photogallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;                   /* Smooth corners */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;                       /* Cursor changes on hover */
+}
+
+/* Image Styling Inside Cards */
+.photogallery-image {
+  width: 100%;
+  height: 280px;                         /* Fixed height for uniformity */
+  object-fit: cover;                     /* Maintain aspect ratio without distortion */
+  border-radius: 10px;
+  border: 3px solid #ddd;                /* Light border */
+}
+
+/* ===============================
+   Hover Effects for Interaction
+=============================== */
+.photogallery-card:hover {
+  transform: scale(1.05);                /* Slight zoom on hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);  /* Elevation shadow effect */
+}
+
+/* ===============================
+   Caption Text Below Each Photo
+=============================== */
+.photo-caption {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  background: #f0f0f0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* ===============================
+   Responsive Design
+=============================== */
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .photogallery-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Two columns for better fit */
+  }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 768px) {
+  .photogallery-grid {
+    grid-template-columns: 1fr;             /* Single column for mobile view */
+  }
+
+  .photogallery-title {
+    font-size: 30px;                        /* Smaller title font for small screens */
+  }
+}
+
+/* ================================
+   Main Container for Event Page
+================================ */
+.event-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================================
+   Back Button Styling
+================================ */
+.back-button {
+  background: #007bff;         /* Bright blue background */
+  color: white;                /* White text */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* ================================
+   Heading for Event Title
+================================ */
+.event-heading {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* ================================
+   Event Card Styling
+================================ */
+.event-card {
+  background-color: white;     /* White card background */
+  padding: 20px;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+/* ================================
+   Event Description Text
+================================ */
+.event-description {
+  font-size: 18px;
+}
+
+/* Event Date Styling */
+.event-date {
+  font-size: 16px;
+  color: gray;                 /* Muted date text */
+}
+
+/* ================================
+   Image Gallery Styling
+================================ */
+.event-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;                   /* Space between images */
+  flex-wrap: wrap;             /* Wraps on smaller screens */
+  margin-top: 20px;
+}
+
+/* Individual Image Container */
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Clickable Image Styling */
+.clickable-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;           /* Maintains aspect ratio and covers container */
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s;  /* Smooth zoom effect */
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);      /* Zoom in slightly on hover */
+}
+
+/* Caption Under Each Image */
+.image-caption {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;                 /* Subtle gray caption text */
+}
+
+/* ================================
+   Scroll to Top Button
+================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;          /* Circular button */
+  font-size: 20px;
+}
+/* ================================
+   Modal Overlay - Fullscreen Background
+================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Keeps modal above all other content */
+}
+
+/* ================================
+   Modal Content Wrapper
+================================ */
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================
+   Modal Image Styling
+================================ */
+.modal-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* ================================
+   Close Button - Top Right Corner
+================================ */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: black;          /* Black background */
+  color: white;               /* White 'X' icon/text */
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;         /* Circular button */
+  font-size: 16px;
+  transform: translate(50%, -50%); /* Aligns perfectly in the corner */
+}
+
+/* ================================
+   Navigation Buttons (Left & Right)
+================================ */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+/* Position Left Navigation Button */
+.nav-btn.left {
+  left: 10px;
+}
+
+/* Position Right Navigation Button */
+.nav-btn.right {
+  right: 10px;
+}
+/* ================================
+   Container for the Video Gallery
+================================ */
+.video-gallery-container {
+  width: 100%;
+  max-width: 1400px; /* Ensures it fits well on large screens */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================================
+   Video Gallery Title Styling
+================================ */
+.video-gallery-title {
+  font-size: 40px;
+  color: rgb(226, 116, 43); /* Orange tone */
+  margin-bottom: 60px;
+  text-transform: uppercase; /* Uppercase text */
+}
+
+/* ================================
+   Grid Layout for Videos
+================================ */
+.video-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 videos per row */
+  gap: 40px; /* Spacing between grid items */
+  padding: 10px;
+}
+
+/* ================================
+   Individual Video Card Styling
+================================ */
+.video-gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ================================
+   Video Display within Card
+================================ */
+.video-gallery-video {
+  width: 100%;
+  height: 280px; /* Fixed height */
+  object-fit: cover; /* Maintain aspect ratio, crop if needed */
+  border-radius: 10px;
+  border: 3px solid #ddd; /* Light gray border */
+  cursor: pointer;
+}
+
+/* ================================
+   Hover Effect on Video Cards
+================================ */
+.video-gallery-card:hover {
+  transform: scale(1.05); /* Slight zoom */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Glow effect */
+}
+
+/* ================================
+   Fullscreen Modal Overlay
+================================ */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's on top */
+}
+
+/* ================================
+   Modal Content Box
+================================ */
+.video-modal-content {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9); /* Light transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+/* ================================
+   Video inside the Modal
+================================ */
+.video-modal-video {
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+/* ================================
+   Close Button for Modal
+================================ */
+.video-close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================
+   Arrow Navigation for Modal
+================================ */
+.video-arrow {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  margin: 0 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-arrow:hover {
+  transform: scale(1.2); /* Enlarge on hover */
+}
+
+/* Left Arrow Position */
+.video-left-arrow {
+  position: absolute;
+  left: -50px;
+}
+
+/* Right Arrow Position */
+.video-right-arrow {
+  position: absolute;
+  right: -50px;
+}
+
+/* ================================
+   Full Header Container Styling
+================================ */
+.fheader-container {
+  background-color: #ffffff;  /* White background */
+  padding: 10px 10px;         /* Inner spacing */
+  margin-bottom: 30px;        /* Space below the section */
+}
+
+/* ================================
+   Tile Wrapper Styling
+================================ */
+.fheader-tiles {
+  display: flex;
+  justify-content: center;  /* Center tiles horizontally */
+  gap: 40px;                /* Gap between tiles */
+  flex-wrap: wrap;          /* Wrap tiles to next line on small screens */
+}
+
+/* ================================
+   Individual Tile Styling
+================================ */
+.fheader-tile {
+  background: white;          /* White tile background */
+  border-radius: 3px;         /* Slightly rounded corners */
+  overflow: hidden;
+
+  width: 300px;               /* Wider tile */
+  height: 140px;              /* Shorter height for compact look */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.3s ease;  /* Smooth hover animation */
+  text-decoration: none;           /* Remove underline from anchor */
+}
+
+/* ================================
+   Image Styling inside Tile
+================================ */
+.fheader-tile img {
+  max-width: 90%;             /* Prevents stretching horizontally */
+  max-height: 80%;            /* Keeps image well contained vertically */
+  object-fit: contain;        /* Maintains image aspect ratio */
+}
+
+/* ================================
+   Hover Animation on Tile
+================================ */
+.fheader-tile:hover {
+  transform: translateY(-3px);  /* Slight lift on hover */
+}
+
+/* ================================
+Contact Us
+================================ */
+
+.contactUs-full-body {
+  margin: 20px 100px;
+  color: #333;
+}
+
+.contactUs-full-body h1,
+.contactUs-full-body h2 {
+  color: #1d0700;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+  background: #fff;
+}
+
+.contact-table th {
+  background: #c25938;
+  color: #fff;
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.contact-table td {
+  padding: 10px 8px;
+  border: 1px solid #ddd;
+}
+
+.contact-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.contact-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.vacant {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .contact-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
